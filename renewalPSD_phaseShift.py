@@ -1,12 +1,11 @@
 """
-renewalPSD_phaseShift_python.py
+renewalPSD_phaseShift.py
 
 Implements Whalen et al., 2020 method of renewal power detection. 
 Originally in MATLAB, rewritten in Python for ease of use.
 """
 
 import numpy as np
-from matplotlib import pyplot as plt
 
 
 def renewalPSD_phaseShift(ts, wind=2**12, step=2**9, FS=1000):
@@ -22,7 +21,7 @@ def renewalPSD_phaseShift(ts, wind=2**12, step=2**9, FS=1000):
     Returns:
     tuple: psd_corr (renewal-corrected PSD), phshift (mean phase shift), psd_unc (uncorrected PSD)
     """
-    freqs = np.arange(0, FS / wind, FS / 2)
+    freqs = np.arange(0, FS / 2 + FS / wind, FS / wind)
 
     # Convert to binary train
     spkt = np.round(FS * ts).astype(int)
@@ -90,4 +89,3 @@ def renewalPSD_phaseShift(ts, wind=2**12, step=2**9, FS=1000):
     psd_unc = np.mean(psds_unc_nonan, axis=1)
 
     return psd_corr, phshift, psd_unc
-
