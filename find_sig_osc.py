@@ -1,6 +1,15 @@
-# Python translation of MATLAB script: find_sig_peaks.m
+"""
+find_sig_osc.py
+
+Implements significant oscillation detection via Whalen et al., 2020 method.
+Originally in MATLAB, rewritten in Python for ease of use.
+
+MATLAB author: Timothy C. Whalen
+Python author: John E. Parker
+"""
+
+# import python modules
 import numpy as np
-import sys
 
 
 def find_sig_peaks(data, thresh, max_n, srch_inds=None):
@@ -26,7 +35,6 @@ def find_sig_peaks(data, thresh, max_n, srch_inds=None):
     return peak_inds
 
 
-# Python translation of MATLAB script: find_local_nmax.m
 def find_local_nmax(X, n):
     """
     Find all peaks in vector X and return their index positions.
@@ -81,7 +89,6 @@ def find_local_nmax(X, n):
     return np.array(good_inds)
 
 
-# Python translation of MATLAB script: find_sig_osc.m
 def find_sig_osc(psd, phshift, srch_inds, cntl_inds, max_n, psd_threshp, phase_threshp):
     """
     Given PSD and phase shift, finds significant oscillations.

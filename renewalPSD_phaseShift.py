@@ -3,8 +3,12 @@ renewalPSD_phaseShift.py
 
 Implements Whalen et al., 2020 method of renewal power detection. 
 Originally in MATLAB, rewritten in Python for ease of use.
+
+MATLAB author: Timothy C. Whalen
+Python author: John E. Parker
 """
 
+# import python modules
 import numpy as np
 
 
