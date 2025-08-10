@@ -31,7 +31,7 @@ rpow, pow, osc_detec = od.band_power_and_osc_detection(
 ```
 Below is a figure comparing the percent error between the MATLAB version and this version of renewal power for the dataset provided in `sample_data`. The maximum of the horizontal axis is at approximately 0.85%, meaning that the MATLAB and Python implementations agree quite well. 
 
-![Percent Error](/sample_data/percent_error.jpg "Percent Error")
+<img src="/sample_data/percent_error.jpg" alt="Percent Error" width="300" height="200">
 
 The data used in `example.py` is a subset of the data from the following bioRxiv paper:
 
